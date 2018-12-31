@@ -1,7 +1,7 @@
 import React from 'react';
 import SearchBar from './SearchBar';
 import youTube from '../apis/youtube';
-
+import VideoList from './VideoList';
 
  class App extends React.Component {
    state = { videos: [] };
@@ -22,7 +22,8 @@ import youTube from '../apis/youtube';
     return (
       <div className="ui container">
         <SearchBar onFormSubmit = {this.onTermSubmit}/>
-        I have {this.state.videos.length} videos.
+        {/* I have {this.state.videos.length} videos. */}
+        <VideoList videos={this.state.videos} />
       </div>
     );
   }
@@ -33,3 +34,5 @@ import youTube from '../apis/youtube';
 
  //className='ui conatiner' adds margin on the L side.
 //SearchBar has a prop of onFormSubmit (which could be named anything). Whatever is put in there can be sent from the onTermSubmit fn to SearchBar.js.
+
+//<VideoList videos prop now can receive the state of your search.
