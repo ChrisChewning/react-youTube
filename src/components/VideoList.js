@@ -4,7 +4,7 @@ import VideoItem from './VideoItem';
 //note: used to props but this is just destructuring.
 const VideoList = ({videos}) => {
   const renderedList = videos.map((video) => { //video is your index.
-    return <VideoItem />;
+    return <VideoItem video = { video } />; //video object from youTube.
   })
 
 
