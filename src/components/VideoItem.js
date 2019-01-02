@@ -1,17 +1,19 @@
 import React from 'react';
+import './VideoItem.css';
 
-//Short captions
+//Short captions.
+//CSS is in components folder or custom semantic ui ('item')
 
 const VideoItem = ({ video }) => { //destructured from props sent from VideoList
-    return (
-      <div>
-
-        <img src= { video.snippet.thumbnails.medium.url } />
-
-        { video.snippet.title }
-
-  </div>
-)}
+  return (
+    <div className="video-item item">
+      <img className="ui image" src= { video.snippet.thumbnails.medium.url } />
+        <div className="content">
+          <div className="header">{ video.snippet.title }</div>
+        </div>
+      </div>
+  );
+};
 
 export default VideoItem;
 

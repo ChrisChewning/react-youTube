@@ -9,7 +9,9 @@ const VideoList = ({videos}) => {
 
 
 
-  return <div>{renderedList}</div> //no need for props.videos.length
+  return <div className="ui relaxed divided list">{renderedList}</div> //no need for props.videos.length
 }
 
 export default VideoList;
+
+//renderedList wraps every individual item. To style it we used the semantic UI docs.
