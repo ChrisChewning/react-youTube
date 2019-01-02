@@ -1,7 +1,15 @@
 import React from 'react';
+import VideoItem from './VideoItem';
 
-const VideoList = props => {
-  return <div>{props.videos.length}</div>
+//note: used to props but this is just destructuring.
+const VideoList = ({videos}) => {
+  const renderedList = videos.map((video) => { //video is your index.
+    return <VideoItem />;
+  })
+
+
+
+  return <div>{renderedList}</div> //no need for props.videos.length
 }
 
 export default VideoList;
