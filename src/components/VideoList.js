@@ -2,9 +2,9 @@ import React from 'react';
 import VideoItem from './VideoItem';
 
 //note: used to props but this is just destructuring.
-const VideoList = ({videos}) => {
+const VideoList = ({videos, onVideoSelect}) => {
   const renderedList = videos.map((video) => { //video is your index.
-    return <VideoItem video = { video } />; //video object from youTube.
+    return <VideoItem onVideoSelect= {onVideoSelect} video = {video} />; //video object from youTube.
   })
 
 
