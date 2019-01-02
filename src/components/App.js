@@ -7,6 +7,10 @@ import VideoDetail from './VideoDetail';
  class App extends React.Component {
    state = { videos: [], selectedVideo: null };
 
+   componentDidMount() {
+     this.onTermSubmit('top educational TED Talks');
+   }
+
 
 //this is an async call so you either have to use promise or async / await.
    onTermSubmit = async term => {
@@ -17,7 +21,10 @@ import VideoDetail from './VideoDetail';
        }
      })
      console.log(response)
-     this.setState({videos: response.data.items}); //drilled down in log.
+     this.setState({
+       videos: response.data.items,
+       selectedVideo: response.data.items[0]
+     }); //drilled down in log.
    }
 
    onVideoSelect = (video) => {
